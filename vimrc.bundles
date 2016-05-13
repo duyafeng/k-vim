@@ -364,9 +364,9 @@ call plug#end()
     let g:ycm_seed_identifiers_with_syntax=1
 
     " 选择后关闭窗口
-    let g:ycm_autoclose_preview_window_after_completion = 0
+    let g:ycm_autoclose_preview_window_after_completion = 1
     " 离开insert模式后自动关闭窗口
-    let g:ycm_autoclose_preview_window_after_insertion = 0
+    let g:ycm_autoclose_preview_window_after_insertion = 1
 
     " 跳转到定义处, 分屏打开
     let g:ycm_goto_buffer_command = 'horizontal-split'
@@ -487,7 +487,6 @@ call plug#end()
 " expandregion {{{
     " map + <Plug>(expand_region_expand)
     " map _ <Plug>(expand_region_shrink)
-    vmap v <Plug>(expand_region_expand)
     vmap V <Plug>(expand_region_shrink)
     " Extend the global default
     call expand_region#custom_text_objects({
@@ -645,7 +644,7 @@ call plug#end()
     let g:solarized_termtrans=1
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
-    " let g:solarized_termcolors=256
+    "let g:solarized_termcolors=256
 " }}}
 
 " molokai {{{

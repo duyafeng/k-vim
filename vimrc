@@ -684,5 +684,5 @@ highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
 set colorcolumn=80
-
+au InsertLeave * write
 
