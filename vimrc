@@ -683,6 +683,9 @@ highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
 
+" 设置ruler
 set colorcolumn=80
-au InsertLeave * write
-
+" 自动保存
+autocmd InsertLeave,FocusLost * write
+" ycm 关闭ycm默认的回车关闭窗口，而是直接输出换行符
+inoremap <CR> <CR>
