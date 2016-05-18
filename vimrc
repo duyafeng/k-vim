@@ -143,7 +143,7 @@ set showmode
 " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
 set scrolloff=7
 
-" set winwidth=79
+"set winwidth=79
 
 " 命令行（在状态行下）的高度，默认为1，这里是2
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
@@ -292,7 +292,7 @@ set wildignore=*.o,*~,*.pyc,*.class
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " 回车即选中当前项
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+"inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 
 " In the quickfix window, <CR> is used to jump to the error under the
 " cursor, so undefine the mapping there.
@@ -411,7 +411,7 @@ noremap L $
 
 
 " Map ; to : and save a million keystrokes 用于快速进入命令行
-nnoremap ; :
+nnoremap ; :!
 
 
 " 命令行模式增强，ctrl - a到行首， -e 到行尾
@@ -687,5 +687,13 @@ highlight SpellLocal term=underline cterm=underline
 set colorcolumn=80
 " 自动保存
 autocmd InsertLeave,FocusLost * write
-" ycm 关闭ycm默认的回车关闭窗口，而是直接输出换行符
-inoremap <CR> <CR>
+" 自动跳到行首并插入模式
+inoremap <C-a> <Esc><S-I>
+nnoremap <C-a> <Esc><S-I>
+" 自动跳到行尾并进入插入模式
+inoremap <C-e> <Esc><S-a>
+nnoremap <C-e> <Esc><S-a>
+" 插入模式下相当于右箭头，当输入完括号中间的内容往后跳转时十分有用
+inoremap <C-l> <Right>
+" 再插入模式下的效果等同于在normal下的效果
+inoremap <C-o> <Esc>o
