@@ -687,13 +687,21 @@ highlight SpellLocal term=underline cterm=underline
 set colorcolumn=80
 " 自动保存
 autocmd InsertLeave,FocusLost * write
+autocmd InsertLeave * FixWhitespace
+
 " 自动跳到行首并插入模式
 inoremap <C-a> <Esc><S-I>
 nnoremap <C-a> <Esc><S-I>
 " 自动跳到行尾并进入插入模式
 inoremap <C-e> <Esc><S-a>
 nnoremap <C-e> <Esc><S-a>
-" 插入模式下相当于右箭头，当输入完括号中间的内容往后跳转时十分有用
-inoremap <C-l> <Right>
-" 再插入模式下的效果等同于在normal下的效果
+" 在插入模式下的效果等同于在normal下的效果
 inoremap <C-o> <Esc>o
+" 在命令行模式和插入模式下重新定义左右箭头
+nnoremap <C-f> <Right>
+nnoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
+
