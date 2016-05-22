@@ -686,7 +686,7 @@ highlight SpellLocal term=underline cterm=underline
 " 设置ruler
 set colorcolumn=80
 " 自动保存
-autocmd InsertLeave,FocusLost * write
+"autocmd InsertLeave,FocusLost * write
 autocmd InsertLeave * FixWhitespace
 
 " 自动跳到行首并插入模式
