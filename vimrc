@@ -658,7 +658,6 @@ if has("gui_running")
 endif
 
 
-
 " theme主题
 set background=dark
 set t_Co=256
@@ -666,7 +665,6 @@ set t_Co=256
 colorscheme solarized
 " colorscheme molokai
 " colorscheme desert
-
 
 " 设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr
@@ -696,7 +694,10 @@ nnoremap <C-a> <Esc><S-I>
 inoremap <C-e> <Esc><S-a>
 nnoremap <C-e> <Esc><S-a>
 " 在插入模式下的效果等同于在normal下的效果
+nnoremap <C-o> o
+nnoremap <C-j> O
 inoremap <C-o> <Esc>o
+inoremap <C-j> <Esc>O
 " 在命令行模式和插入模式下重新定义左右箭头
 nnoremap <C-f> <Right>
 nnoremap <C-b> <Left>
