@@ -382,7 +382,7 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 
 " 分屏窗口移动, Smart way to move between windows
-map <C-j> <C-W>j
+"map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
@@ -415,7 +415,7 @@ nnoremap ; :!
 
 
 " 命令行模式增强，ctrl - a到行首， -e 到行尾
-cnoremap <C-j> <t_kd>
+"cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
@@ -695,7 +695,6 @@ inoremap <C-e> <Esc><S-a>
 nnoremap <C-e> <Esc><S-a>
 " 在插入模式下的效果等同于在normal下的效果
 nnoremap <C-o> o
-nnoremap <C-j> <S-O>
 inoremap <C-o> <Esc>o
 inoremap <C-j> <Esc>O
 " 在命令行模式和插入模式下重新定义左右箭头
@@ -705,4 +704,5 @@ inoremap <C-f> <Right>
 inoremap <C-b> <Left>
 cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
-
+" ctrl-space
+inoremap <C-Space> <Space>
