@@ -136,7 +136,6 @@ Plug 'altercation/vim-colors-solarized'
 " 主题 molokai
 Plug 'tomasr/molokai'
 
-
 " nav
 " nerdtree nerdtreetabs
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
@@ -154,6 +153,9 @@ Plug 'kana/vim-textobj-line'
 Plug 'kana/vim-textobj-entire'
 " 增加缩进文本对象: i   dai yai cii - 相同缩进属于同一块
 Plug 'kana/vim-textobj-indent'
+
+" Golang, 添加后会很慢
+Plug 'fatih/vim-go'
 
 if count(g:bundle_groups, 'tmux')
     " tmux
@@ -262,7 +264,6 @@ if count(g:bundle_groups, 'beta')
     let g:indent_guides_auto_colors = 0
     autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=black
     autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=black
-
 endif
 
 
@@ -281,6 +282,7 @@ call plug#end()
     let g:syntastic_check_on_open=1
     let g:syntastic_check_on_wq=0
     let g:syntastic_enable_highlighting=1
+    let g:syntastic_aggregate_errors=1
 
     " checkers
     " 最轻量
@@ -298,6 +300,9 @@ call plug#end()
     " if js
     " let g:syntastic_javascript_checkers = ['jsl', 'jshint']
     " let g:syntastic_html_checkers=['tidy', 'jshint']
+
+    " Golang lint, 其实['go']就足够了
+    let g:syntastic_go_checkers = ['go', 'golint', 'govet', 'errcheck']
 
     " to see error location list
     let g:syntastic_always_populate_loc_list = 1
@@ -764,11 +769,17 @@ call plug#end()
 " vimgo {{{
     let g:go_highlight_functions = 1
     let g:go_highlight_methods = 1
+    let g:go_highlight_fields = 1
     let g:go_highlight_structs = 1
+    let g:go_highlight_interfaces = 1
     let g:go_highlight_operators = 1
     let g:go_highlight_build_constraints = 1
 
     let g:go_fmt_fail_silently = 1
+    let g:go_fmt_autosave = 0
+
+    au FileType go nmap <Leader>gf <Plug>(go-imports)
+
     " let g:go_fmt_command = "goimports"
     " let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
 " }}}
