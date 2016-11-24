@@ -705,10 +705,10 @@ cnoremap <C-f> <Right>
 cnoremap <C-b> <Left>
 " ctrl-space
 " inoremap <C-Space> <Space>
-imap <Nul> <Space>
-map  <Nul> <Nop>
-vmap <Nul> <Nop>
-cmap <Nul> <Nop>
-nmap <Nul> <Nop>
+"imap <Nul> <Space>
+"map  <Nul> <Nop>
+"vmap <Nul> <Nop>
+"cmap <Nul> <Nop>
+"nmap <Nul> <Nop>
 
 set clipboard=unnamed

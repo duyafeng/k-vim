@@ -155,7 +155,7 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-indent'
 
 " Golang, 添加后会很慢
-"Plug 'fatih/vim-go'
+Plug 'fatih/vim-go'
 Plug 'nsf/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'}
 
 if count(g:bundle_groups, 'tmux')
