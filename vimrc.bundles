@@ -158,6 +158,9 @@ Plug 'kana/vim-textobj-indent'
 Plug 'fatih/vim-go'
 Plug 'nsf/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'}
 
+" Plugin vim-vue
+Plug 'darthmall/vim-vue'
+
 if count(g:bundle_groups, 'tmux')
     " tmux
     " For tmux navigator Ctrl-hjkl
