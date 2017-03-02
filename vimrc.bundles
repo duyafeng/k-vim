@@ -458,6 +458,8 @@ call plug#end()
 
 " delimitMate {{{
     " for python docstring ", 优化输入
+    let delimitMate_expand_cr = 1
+    let delimitMate_expand_space = 1
     au FileType python let b:delimitMate_nesting_quotes = ['"']
     au FileType php let delimitMate_matchpairs = "(:),[:],{:}"
     " 关闭某些类型文件的自动补全
