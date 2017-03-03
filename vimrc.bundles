@@ -197,7 +197,7 @@ if count(g:bundle_groups, 'golang')
     " 2. :GoInstallBinaries
     " vimgo
     Plug 'fatih/vim-go', {'for': 'go'}
-    Plug 'nsf/gocode', {'rtp': 'vim', 'do': '~/.vim/plugged/gocode/vim/symlink.sh'}
+    Plug 'nsf/gocode', {'rtp': 'vim', 'do': '~/.vim/bundle/gocode/vim/symlink.sh'}
 endif
 
 
@@ -236,7 +236,7 @@ if count(g:bundle_groups, 'javascript')
     " for javascript 自动补全, 配合YCM, 需要安装全局环境的（非nvm中) node.js&npm
     " 安装完成后还需要在 bundle/tern_for_vim 下执行 npm install 安装依赖
     " see https://github.com/marijnh/tern_for_vim
-    " Plug 'marijnh/tern_for_vim'
+    Plug 'marijnh/tern_for_vim'
 endif
 
 
@@ -556,12 +556,12 @@ call plug#end()
     let g:ctrlp_mruf_max=500
     let g:ctrlp_follow_symlinks=1
     " 如果安装了ag, 使用ag
-    " if executable('ag')
-    " " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-    " let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    if executable('ag')
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
     " " ag is fast enough that CtrlP doesn't need to cache
-    " let g:ctrlp_use_caching = 0
-    " endif
+    let g:ctrlp_use_caching = 0
+    endif
 
     " ctrlpfunky
     " ctrlp插件1 - 不用ctag进行函数快速跳转
