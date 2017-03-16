@@ -712,3 +712,5 @@ inoremap <C-Space> <Space>
 "nmap <Nul> <Nop>
 
 set clipboard=unnamed
+"set guifont=monofur\ for\ Powerline:h16
+set linespace=6
