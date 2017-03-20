@@ -46,7 +46,7 @@ filetype plugin indent on
 
 
 " history存储容量
-set history=2000
+set history=5000
 
 " 检测文件类型
 filetype on
@@ -563,7 +563,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType ruby,javascript,html,css,xml,vue,mkd,markdown.mkd set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
-autocmd BufRead,BufNewFile *.part set filetype=html
+autocmd BufRead,BufNewFile *.part,*.vue set filetype=html
 " disable showmatch when use > in php
 au BufWinEnter *.php set mps-=<:>
 
@@ -713,4 +713,3 @@ inoremap <C-Space> <Space>
 
 set clipboard=unnamed
 "set guifont=monofur\ for\ Powerline:h16
-set linespace=6
