@@ -63,7 +63,7 @@ Plug 'bronson/vim-trailing-whitespace'
 
 " easyalign
 " 快速赋值语句对齐
-Plug 'junegunn/vim-easy-align'
+" Plug 'junegunn/vim-easy-align'
 
 " quick movement
 " easymotion
@@ -128,7 +128,7 @@ Plug 'dyng/ctrlsf.vim'
 
 " gundo
 " edit history, 可以查看回到某个历史状态
-Plug 'sjl/gundo.vim'
+" Plug 'sjl/gundo.vim'
 
 " view
 " airline
@@ -156,7 +156,7 @@ Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 Plug 'szw/vim-ctrlspace'
 
 " tagbar
-Plug 'majutsushi/tagbar'
+" Plug 'majutsushi/tagbar'
 
 " text object
 " 支持自定义文本对象
@@ -486,12 +486,12 @@ call plug#end()
 " }}}
 
 " easyalign {{{
-    vmap <Leader>a <Plug>(EasyAlign)
-    nmap <Leader>a <Plug>(EasyAlign)
-    if !exists('g:easy_align_delimiters')
-    let g:easy_align_delimiters = {}
-    endif
-    let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
+    " vmap <Leader>a <Plug>(EasyAlign)
+    " nmap <Leader>a <Plug>(EasyAlign)
+    " if !exists('g:easy_align_delimiters')
+    " let g:easy_align_delimiters = {}
+    " endif
+    " let g:easy_align_delimiters['#'] = { 'pattern': '#', 'ignore_groups': ['String'] }
 " }}}
 
 " ################### 快速移动 ###################
@@ -622,7 +622,7 @@ call plug#end()
 " }}}
 
 " gundo {{{
-    noremap <leader>h :GundoToggle<CR>
+    " noremap <leader>h :GundoToggle<CR>
 " }}}
 
 " ################### 显示增强 ###################
