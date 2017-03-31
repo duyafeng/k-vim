@@ -68,7 +68,7 @@ Plug 'bronson/vim-trailing-whitespace'
 " quick movement
 " easymotion
 "更高效的移动 [,, + w/fx/h/j/k/l]
-" Plug 'Lokaltog/vim-easymotion'
+Plug 'Lokaltog/vim-easymotion'
 
 " 更高效的行内移动, f/F/t/T, 才触发
 " quickscope
@@ -499,6 +499,7 @@ call plug#end()
 " easymotion {{{
     " let g:EasyMotion_smartcase = 1
     "let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
+    map <Leader>f <Plug>(easymotion-bd-w)
     " map <Leader><leader>h <Plug>(easymotion-linebackward)
     " map <Leader><Leader>j <Plug>(easymotion-j)
     " map <Leader><Leader>k <Plug>(easymotion-k)
@@ -547,7 +548,7 @@ call plug#end()
 " ctrlp ctrlpfunky{{{
     let g:ctrlp_map = '<leader>p'
     let g:ctrlp_cmd = 'CtrlP'
-    map <leader>f :CtrlPMRU<CR>
+    map <leader><leader>f :CtrlPMRU<CR>
     let g:ctrlp_custom_ignore = {
         \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
         \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
