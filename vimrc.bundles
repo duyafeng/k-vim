@@ -17,7 +17,7 @@ filetype off " required! turn off
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
     " let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'beta', 'json', 'nginx', 'golang', 'ruby', 'less', 'php', 'coffeescript']
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'json', 'golang', 'rust']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'json', 'golang']
 endif
 
 " ----------------------------------------------------------------------------
@@ -68,7 +68,7 @@ Plug 'bronson/vim-trailing-whitespace'
 " quick movement
 " easymotion
 "更高效的移动 [,, + w/fx/h/j/k/l]
-Plug 'Lokaltog/vim-easymotion'
+" Plug 'Lokaltog/vim-easymotion'
 
 " 更高效的行内移动, f/F/t/T, 才触发
 " quickscope
@@ -83,7 +83,7 @@ Plug 'vim-scripts/matchit.zip'
 " '[a-zA-Z] go to mark
 " m<Space>  del all marks
 " m/        list all marks
-Plug 'kshenoy/vim-signature'
+" Plug 'kshenoy/vim-signature'
 
 " quick selection and edit
 " expandregion
@@ -287,8 +287,8 @@ if count(g:bundle_groups, 'beta')
 endif
 
 if count(g:bundle_groups, 'rust')
-    Plug 'rust-lang/rust.vim'
-    Plug 'racer-rust/vim-racer'
+    " Plug 'rust-lang/rust.vim'
+    " Plug 'racer-rust/vim-racer'
 endif
 
 " Add plugins to &runtimepath
@@ -479,9 +479,9 @@ call plug#end()
 
 
 " rust {{{
-    let g:rustfmt_autosave = 1
-    let g:racer_cmd="/Users/Lime/.cargo/bin/racer"
-    let $RUST_SRC_PATH="/opt/rust-1.16.0/src/"
+    " let g:rustfmt_autosave = 1
+    " let g:racer_cmd="/Users/Lime/.cargo/bin/racer"
+    " let $RUST_SRC_PATH="/opt/rust-1.16.0/src/"
 " }}}
 
 
@@ -510,9 +510,9 @@ call plug#end()
 " easymotion {{{
     " let g:EasyMotion_smartcase = 1
     "let g:EasyMotion_startofline = 0 " keep cursor colum when JK motion
-    map <Leader>f <Plug>(easymotion-bd-wl)
-    map <Leader>j <Plug>(easymotion-j)
-    map <Leader>k <Plug>(easymotion-k)
+    " map <Leader>f <Plug>(easymotion-bd-wl)
+    " map <Leader>j <Plug>(easymotion-j)
+    " map <Leader>k <Plug>(easymotion-k)
     " map <Leader><leader>h <Plug>(easymotion-linebackward)
     " map <Leader><leader>l <Plug>(easymotion-lineforward)
     " 重复上一次操作, 类似repeat插件, 很强大
@@ -559,7 +559,7 @@ call plug#end()
 " ctrlp ctrlpfunky{{{
     let g:ctrlp_map = '<leader>p'
     let g:ctrlp_cmd = 'CtrlP'
-    map <leader><leader>f :CtrlPMRU<CR>
+    map <leader>f :CtrlPMRU<CR>
     let g:ctrlp_custom_ignore = {
         \ 'dir':  '\v[\/]\.(git|hg|svn|rvm)$',
         \ 'file': '\v\.(exe|so|dll|zip|tar|tar.gz|pyc)$',
