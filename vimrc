@@ -563,7 +563,7 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType ruby,javascript,html,css,xml,vue,mkd,markdown.mkd set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
-autocmd BufRead,BufNewFile *.part,*.vue set filetype=html
+autocmd BufRead,BufNewFile *.part,*.vue set filetype=html | syntax sync fromstart
 " disable showmatch when use > in php
 au BufWinEnter *.php set mps-=<:>
 
@@ -718,4 +718,5 @@ inoremap <C-Space> <Space>
 "nmap <Nul> <Nop>
 
 set clipboard=unnamed
-nnoremap <leader>r :source $MYVIMRC<cr>
+nnoremap <leader>r :so $MYVIMRC<cr>
+autocmd FileType html syntax sync fromstart
