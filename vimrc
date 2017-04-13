@@ -719,4 +719,3 @@ inoremap <C-Space> <Space>
 
 set clipboard=unnamed
 nnoremap <leader>r :so $MYVIMRC<cr>
-autocmd FileType html syntax sync fromstart
