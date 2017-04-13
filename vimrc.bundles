@@ -16,7 +16,7 @@ filetype off " required! turn off
 
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'html', 'css', 'tmux', 'json', 'golang']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'css', 'tmux', 'json', 'golang']
 endif
 
 " ----------------------------------------------------------------------------
@@ -198,11 +198,6 @@ endif
 
 if count(g:bundle_groups, 'json')
     Plug 'elzr/vim-json', {'for': 'json'}
-endif
-
-
-if count(g:bundle_groups, 'html')
-    Plug 'othree/html5.vim'
 endif
 
 
