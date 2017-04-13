@@ -299,7 +299,7 @@ autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 " quickfix window  s/v to open in split window,  ,gd/,jd => quickfix window => open it
 autocmd BufReadPost quickfix nnoremap <buffer> v <C-w><Enter><C-w>L
-autocmd BufReadPost quickfix nnoremap <buffer> s <C-w><Enter><C-w>K
+autocmd BufReadPost quickfix jnoremap <buffer> s <C-w><Enter><C-w>K
 
 " command-line window
 autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
@@ -718,4 +718,4 @@ inoremap <C-Space> <Space>
 "nmap <Nul> <Nop>
 
 set clipboard=unnamed
-"set guifont=monofur\ for\ Powerline:h16
+nnoremap <leader>r :source $MYVIMRC<cr>
