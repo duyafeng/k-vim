@@ -719,3 +719,6 @@ inoremap <C-Space> <Space>
 
 set clipboard=unnamed
 nnoremap <leader>r :so $MYVIMRC<cr>
+
+" 跳转到最后一次编辑的位置
+nnoremap <C-g> `.
