@@ -16,7 +16,7 @@ filetype off " required! turn off
 
 " inspired by spf13, 自定义需要的插件集合
 if !exists('g:bundle_groups')
-    let g:bundle_groups=['python', 'javascript', 'markdown', 'css', 'tmux', 'json', 'golang']
+    let g:bundle_groups=['python', 'javascript', 'markdown', 'css', 'tmux', 'json', 'golang', 'c']
 endif
 
 " ----------------------------------------------------------------------------
@@ -74,7 +74,7 @@ Plug 'junegunn/vim-easy-align'
 " Plug 'unblevable/quick-scope'
 
 " match %
-Plug 'vim-scripts/matchit.zip'
+" Plug 'vim-scripts/matchit.zip'
 
 " signature
 " 显示marks - 方便自己进行标记和跳转
@@ -152,7 +152,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'scrooloose/nerdtree' | Plug 'jistr/vim-nerdtree-tabs'
 
 " ctrlspace
-Plug 'szw/vim-ctrlspace'
+" Plug 'szw/vim-ctrlspace'
 
 " tagbar
 " Plug 'majutsushi/tagbar'
@@ -204,6 +204,10 @@ endif
 if count(g:bundle_groups, 'rust')
     " Plug 'rust-lang/rust.vim'
     " Plug 'racer-rust/vim-racer'
+endif
+
+if count(g:bundle_groups, 'c')
+    Plug 'shiyanhui/vim-slash'
 endif
 
 " Add plugins to &runtimepath
