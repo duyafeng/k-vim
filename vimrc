@@ -576,7 +576,7 @@ fun! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,lua autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 
 " 定义函数AutoSetFileHead，自动插入文件头
@@ -684,7 +684,7 @@ highlight SpellLocal term=underline cterm=underline
 set colorcolumn=80
 " 自动保存
 "autocmd InsertLeave,FocusLost * write
-autocmd InsertLeave * FixWhitespace
+" autocmd InsertLeave * FixWhitespace
 
 " 自动跳到行首并插入模式
 inoremap <C-a> <Esc><S-I>
@@ -722,3 +722,5 @@ nnoremap <leader>r :so $MYVIMRC<cr>
 
 " 跳转到最后一次编辑的位置
 nnoremap <C-g> `.
+
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
