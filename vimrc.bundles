@@ -187,7 +187,7 @@ endif
 
 
 if count(g:bundle_groups, 'javascript')
-    Plug 'pangloss/vim-javascript', {'for': 'javascript'}
+    Plug 'othree/yajs.vim' | Plug 'pangloss/vim-javascript', {'for': 'javascript'}
 
     " for javascript 自动补全, 配合YCM, 需要安装全局环境的（非nvm中) node.js&npm
     " 安装完成后还需要在 bundle/tern_for_vim 下执行 npm install 安装依赖
