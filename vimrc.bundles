@@ -26,8 +26,6 @@ endif
 
 call plug#begin('~/.vim/bundle')
 
-" 移动光标到插件名上, 使用'#'快速跳转到每个插件的配置处
-
 " syntastic
 if v:version < 800
     Plug 'scrooloose/syntastic'
@@ -242,6 +240,7 @@ if has_key(g:plugs, 'ale')
     let g:ale_linters = {
     \   'python': ['flake8'],
     \   'javascript': ['eslint'],
+    \   'go': ['gofmt'],
     \}
 
     " E501 -> 120 chars
@@ -273,8 +272,8 @@ if has_key(g:plugs, 'ale')
     nnoremap <Leader>s :call ToggleErrors()<cr>
 
     let g:ale_set_highlights = 1
-    highlight clear ALEErrorSign
-    highlight clear ALEWarningSign
+    " highlight clear ALEErrorSign
+    " highlight clear ALEWarningSign
 endif
 
 " }}}
