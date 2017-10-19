@@ -278,6 +278,12 @@ ctrl+n    相对/绝对行号切换
     14. Python使用#进行注释时, 自动缩进
 ```
 
+
+### YouCompleteMe
+
+对于C++11的支持，需要把 k-vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py
+中-Wc++98-compat改为-Wno-c++98-compat
+
 ------------------------
 ------------------------
 

@@ -49,7 +49,7 @@ filetype plugin indent on
 
 
 " history存储容量
-set history=2000
+set history=5000
 
 " 检测文件类型
 filetype on
@@ -92,7 +92,7 @@ set noswapfile
 set wildignore=*.swp,*.bak,*.pyc,*.class,.svn
 
 " 突出显示当前列
-set cursorcolumn
+"set cursorcolumn
 " 突出显示当前行
 set cursorline
 
@@ -146,7 +146,7 @@ set showmode
 " 在上下移动光标时，光标的上方或下方至少会保留显示的行数
 set scrolloff=7
 
-" set winwidth=79
+"set winwidth=79
 
 " 命令行（在状态行下）的高度，默认为1，这里是2
 set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\")}]\ %-14.(%l,%c%V%)\ %P
@@ -295,14 +295,14 @@ set wildignore=*.o,*~,*.pyc,*.class
 autocmd InsertLeave * if pumvisible() == 0|pclose|endif
 
 " 回车即选中当前项
-inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
+"inoremap <expr> <CR>       pumvisible() ? "\<C-y>" : "\<CR>"
 
 " In the quickfix window, <CR> is used to jump to the error under the
 " cursor, so undefine the mapping there.
 autocmd BufReadPost quickfix nnoremap <buffer> <CR> <CR>
 " quickfix window  s/v to open in split window,  ,gd/,jd => quickfix window => open it
 autocmd BufReadPost quickfix nnoremap <buffer> v <C-w><Enter><C-w>L
-autocmd BufReadPost quickfix nnoremap <buffer> s <C-w><Enter><C-w>K
+autocmd BufReadPost quickfix noremap <buffer> s <C-w><Enter><C-w>K
 
 " command-line window
 autocmd CmdwinEnter * nnoremap <buffer> <CR> <CR>
@@ -385,7 +385,7 @@ inoremap <special> <expr> <Esc>[200~ XTermPasteBegin()
 
 
 " 分屏窗口移动, Smart way to move between windows
-map <C-j> <C-W>j
+"map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
@@ -414,11 +414,11 @@ noremap L $
 
 
 " Map ; to : and save a million keystrokes 用于快速进入命令行
-nnoremap ; :
+nnoremap ; :!
 
 
 " 命令行模式增强，ctrl - a到行首， -e 到行尾
-cnoremap <C-j> <t_kd>
+"cnoremap <C-j> <t_kd>
 cnoremap <C-k> <t_ku>
 cnoremap <C-a> <Home>
 cnoremap <C-e> <End>
@@ -571,7 +571,7 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 
 " 具体编辑文件类型的一般设置，比如不要 tab 等
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
-autocmd FileType ruby,javascript,html,css,xml set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
+autocmd FileType ruby,javascript,html,css,xml,vue,mkd,markdown.mkd set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
 autocmd BufRead,BufNewFile *.part set filetype=html
 autocmd BufRead,BufNewFile *.vue setlocal filetype=vue.html.javascript tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
@@ -588,7 +588,7 @@ fun! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,lua,vue autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 
 " 定义函数AutoSetFileHead，自动插入文件头
@@ -601,8 +601,6 @@ function! AutoSetFileHead()
 
     "如果文件类型为python
     if &filetype == 'python'
-        " call setline(1, "\#!/usr/bin/env python")
-        " call append(1, "\# encoding: utf-8")
         call setline(1, "\# -*- coding: utf-8 -*-")
     endif
 
@@ -652,14 +650,12 @@ if has("gui_running")
 endif
 
 
-
 " theme主题
 set background=dark
 set t_Co=256
 
 colorscheme solarized
 " colorscheme molokai
-
 
 " 设置标记一列的背景颜色和数字一行颜色一致
 hi! link SignColumn   LineNr
@@ -675,3 +671,48 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
+
+" 设置ruler
+set colorcolumn=80
+" 自动保存
+"autocmd InsertLeave,FocusLost * write
+" autocmd InsertLeave * FixWhitespace
+
+" 自动跳到行首并插入模式
+inoremap <C-a> <Esc><S-I>
+nnoremap <C-a> <Esc><S-I>
+
+" 自动跳到行尾并进入插入模式
+inoremap <C-e> <Esc><S-a>
+nnoremap <C-e> <Esc><S-a>
+
+" 在插入模式下的效果等同于在normal下的效果
+nnoremap <C-o> o
+inoremap <C-o> <Esc>o
+nnoremap <C-j> O
+inoremap <C-j> <Esc>O
+
+" 在命令行模式和插入模式下重新定义左右箭头
+nnoremap <C-f> <Right>
+nnoremap <C-b> <Left>
+inoremap <C-f> <Right>
+inoremap <C-b> <Left>
+cnoremap <C-f> <Right>
+cnoremap <C-b> <Left>
+
+" ctrl-space
+inoremap <C-Space> <Space>
+
+"imap <Nul> <Space>
+"map  <Nul> <Nop>
+"vmap <Nul> <Nop>
+"cmap <Nul> <Nop>
+"nmap <Nul> <Nop>
+
+set clipboard=unnamed
+nnoremap <leader>r :so $MYVIMRC<cr>
+
+" 跳转到最后一次编辑的位置
+nnoremap <C-g> `.
+
+silent! call repeat#set("\<Plug>MyWonderfulMap", v:count)
