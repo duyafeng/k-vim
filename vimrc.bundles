@@ -27,11 +27,13 @@ endif
 call plug#begin('~/.vim/bundle')
 
 " syntastic
-if v:version < 800
-    Plug 'scrooloose/syntastic'
-else
-    Plug 'w0rp/ale'
-endif
+" if v:version < 800
+    " Plug 'scrooloose/syntastic'
+" else
+    " Plug 'w0rp/ale'
+" endif
+
+Plug 'scrooloose/syntastic'
 
 " auto complete
 " 代码自动补全
@@ -272,8 +274,8 @@ if has_key(g:plugs, 'ale')
     nnoremap <Leader>s :call ToggleErrors()<cr>
 
     let g:ale_set_highlights = 1
-    " highlight clear ALEErrorSign
-    " highlight clear ALEWarningSign
+    highlight clear ALEErrorSign
+    highlight clear ALEWarningSign
 endif
 
 " }}}
