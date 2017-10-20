@@ -240,7 +240,7 @@ if has_key(g:plugs, 'ale')
     let g:ale_linters = {
     \   'python': ['flake8'],
     \   'javascript': ['eslint'],
-    \   'go': ['gofmt'],
+    \   'go': ['gofmt', 'go build'],
     \}
 
     " E501 -> 120 chars
@@ -324,38 +324,6 @@ endif
         \ 'tagbar' : 1,
         \ 'gitcommit' : 1,
         \}
-" }}}
-
-
-" ultisnips {{{
-    " let g:UltiSnipsExpandTrigger       = "<tab>"
-    " let g:UltiSnipsJumpForwardTrigger  = "<tab>"
-    " let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-    " let g:UltiSnipsSnippetDirectories  = ['UltiSnips']
-    " let g:UltiSnipsSnippetsDir = '~/.vim/UltiSnips'
-    " 定义存放代码片段的文件夹 .vim/UltiSnips下，使用自定义和默认的，将会的到全局，有冲突的会提示
-    " 进入对应filetype的snippets进行编辑
-    " map <leader>us :UltiSnipsEdit<CR>
-
-    " ctrl+j/k 进行选择
-    " func! g:JInYCM()
-    "     if pumvisible()
-    "         return "\<C-n>"
-    "     else
-    "         return "\<c-j>"
-    "     endif
-    " endfunction
-
-    " func! g:KInYCM()
-    "     if pumvisible()
-    "         return "\<C-p>"
-    "     else
-    "         return "\<c-k>"
-    "     endif
-    " endfunction
-    " inoremap <c-j> <c-r>=g:JInYCM()<cr>
-    " au BufEnter,BufRead * exec "inoremap <silent> " . g:UltiSnipsJumpBackwordTrigger . " <C-R>=g:KInYCM()<cr>"
-    " let g:UltiSnipsJumpBackwordTrigger = "<c-k>"
 " }}}
 
 
@@ -448,15 +416,6 @@ endif
 
 " }}}
 
-" multiplecursors {{{
-    " let g:multi_cursor_use_default_mapping=0
-    " Default mapping
-    " let g:multi_cursor_next_key='<C-m>'
-    " let g:multi_cursor_prev_key='<C-p>'
-    " let g:multi_cursor_skip_key='<C-x>'
-    " let g:multi_cursor_quit_key='<Esc>'
-" }}}
-
 " ################### 功能相关 ###################
 
 " ctrlp ctrlpfunky{{{
@@ -511,29 +470,6 @@ endif
         \ "prev"  : "<C-K>",
         \ "pquit" : "q",
         \ }
-" }}}
-
-" git.  git操作还是习惯命令行,vim里面处理简单diff编辑操作
-
-" fugitive {{{
-    " :Gdiff  :Gstatus :Gvsplit
-    " nnoremap <leader>ge :Gdiff<CR>
-    " not ready to open
-    " <leader>gb maps to :Gblame<CR>
-    " <leader>gs maps to :Gstatus<CR>
-    " <leader>gd maps to :Gdiff<CR>  和现有冲突
-    " <leader>gl maps to :Glog<CR>
-    " <leader>gc maps to :Gcommit<CR>
-    " <leader>gp maps to :Git push<CR>
-" }}}
-
-" gitgutter {{{
-    " 同git diff,实时展示文件中修改的行
-    " 只是不喜欢除了行号多一列, 默认关闭,gs时打开
-    " let g:gitgutter_map_keys = 0
-    " let g:gitgutter_enabled = 0
-    " let g:gitgutter_highlight_lines = 1
-    " nnoremap <leader>gs :GitGutterToggle<CR>
 " }}}
 
 " gundo {{{
@@ -595,12 +531,6 @@ endif
     let g:solarized_contrast="normal"
     let g:solarized_visibility="normal"
     "let g:solarized_termcolors=256
-" }}}
-
-" molokai {{{
-    " monokai原始背景色
-    " let g:molokai_original = 1
-    " let g:rehash256 = 1
 " }}}
 
 " ################### 快速导航 ###################
@@ -692,19 +622,6 @@ endif
 
 " ################### 语言相关 ###################
 
-" quickrun {{{
-    " let g:quickrun_config = {
-    " \   "_" : {
-    " \       "outputter" : "message",
-    " \   },
-    " \}
-
-    " let g:quickrun_no_default_key_mappings = 1
-    " nmap <Leader>r <Plug>(quickrun)
-    " map <F10> :QuickRun<CR>
-" }}}
-
-
 " pythonsyntax {{{
     let python_highlight_all = 1
 " }}}
@@ -746,9 +663,6 @@ endif
 
 " json {{{
     let g:vim_json_syntax_conceal = 0
-" }}}
-
-" css {{{
 " }}}
 
 
