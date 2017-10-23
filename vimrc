@@ -573,6 +573,9 @@ nnoremap <leader>sv :source $MYVIMRC<CR>
 autocmd FileType python set tabstop=4 shiftwidth=4 expandtab ai
 autocmd FileType ruby,javascript,html,css,xml,vue,mkd,markdown.mkd set tabstop=2 shiftwidth=2 softtabstop=2 expandtab ai
 autocmd BufRead,BufNewFile *.md,*.mkd,*.markdown set filetype=markdown.mkd
+" autocmd BufRead,BufNewFile *.part,*.vue set filetype=html | syntax sync fromstart
+" autocmd BufRead,BufNewFile *.part,*.vue set filetype=html
+autocmd BufRead,BufNewFile *.part set filetype=html
 autocmd BufRead,BufNewFile *.part,*.vue set filetype=html | syntax sync fromstart
 
 " disable showmatch when use > in php
@@ -587,7 +590,7 @@ fun! <SID>StripTrailingWhitespaces()
     %s/\s\+$//e
     call cursor(l, c)
 endfun
-autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,lua,vue autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd FileType c,cpp,java,go,php,javascript,puppet,python,rust,twig,xml,yml,perl,lua autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
 
 " 定义函数AutoSetFileHead，自动插入文件头
